@@ -4,7 +4,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-page marketing website for a fictional wealth-management firm, **Sterling & Vale Advisory**. Built with **vanilla HTML/CSS/JS only** — no frameworks, no build tools, no package manager. Google Fonts is the only external dependency (loaded via `<link>` in `index.html`).
+A single-page **lead-magnet landing page** for a fictional wealth-management firm, **Sterling & Vale Advisory**. The page is built around one conversion goal: get visitors to claim a free "Wealth Blueprint" via the enquiry form. Built with **vanilla HTML/CSS/JS only** — no frameworks, no build tools, no package manager. Google Fonts is the only external dependency (loaded via `<link>` in `index.html`).
+
+The visual identity is a **purple theme** (deep aubergine + amethyst→orchid glow accents) with **Fraunces** (display serif) paired with **Inter** (body). All color/spacing lives in `:root` custom properties in `styles.css` — retheme there, never in individual rules.
 
 ## Running
 
@@ -20,7 +22,7 @@ Then visit http://localhost:8000. There are no tests, linters, or CI.
 
 Three files, strictly separated by concern — keep them that way (no inline `<style>`/`<script>`):
 
-- `index.html` — semantic structure. Sections are ordered Hero → Services (`#about`) → Testimonials → Contact, each with an `id` used as a smooth-scroll anchor target and by the navbar links.
+- `index.html` — semantic structure, plus SEO/social `<head>` (descriptive title, meta description, canonical, Open Graph, and a `FinancialService`/`Offer` JSON-LD block). Sections run as a conversion funnel: Hero offer (`#home`) → What's inside (`#about`) → How it works (`#how`, a real 3-step sequence — numbered markers are justified here) → Testimonials (`#testimonials`) → Lead form (`#contact`). Each `id` is a smooth-scroll anchor used by the navbar.
 - `styles.css` — all theming flows from `:root` custom properties (colors, spacing scale `--sp-1..6`, `--radius`, `--maxw`, `--nav-h`). Change the palette/spacing there, not in individual rules. Mobile-first; breakpoints at 640px, 860px (nav collapse), and 980px.
 - `script.js` — one IIFE with five numbered sections: (1) navbar scrolled-state + mobile toggle, (2) IntersectionObserver scroll-in reveals, (3) testimonial carousel, (4) enquiry form + FormSubmit AJAX, (5) footer year.
 

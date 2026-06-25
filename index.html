@@ -3,15 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sterling & Vale Advisory — calm, considered wealth management for professionals and families seeking to grow and protect what matters." />
-  <title>Sterling &amp; Vale Advisory — Wealth Management</title>
+  <title>Free Wealth Blueprint — Sterling &amp; Vale Advisory</title>
+  <meta name="description" content="Claim a complimentary Wealth Blueprint from Sterling & Vale Advisory: a personalised review of your portfolio, retirement, fees and estate plan. No cost, no obligation — delivered within one business day." />
+  <link rel="canonical" href="https://sterlingvale.example/" />
 
-  <!-- Google Fonts: Playfair Display (serif headings) + Inter (sans body) -->
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Free Wealth Blueprint — Sterling &amp; Vale Advisory" />
+  <meta property="og:description" content="A personalised review of your portfolio, retirement, fees and estate plan. No cost, no obligation." />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts: Fraunces (display serif) + Inter (body/utility) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Structured data: helps search engines understand the offer -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "Sterling & Vale Advisory",
+    "description": "Independent, fee-based wealth management. Claim a free personalised Wealth Blueprint.",
+    "areaServed": "United Kingdom",
+    "makesOffer": {
+      "@type": "Offer",
+      "name": "Free Wealth Blueprint",
+      "price": "0",
+      "priceCurrency": "GBP"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -24,11 +49,10 @@
       </a>
 
       <nav class="nav__links" id="nav-menu" aria-label="Primary">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn btn--ghost nav__cta">Book a Consultation</a>
+        <a href="#about">What's inside</a>
+        <a href="#how">How it works</a>
+        <a href="#testimonials">Stories</a>
+        <a href="#contact" class="btn btn--ghost nav__cta">Claim your Blueprint</a>
       </nav>
 
       <button class="nav__toggle" id="nav-toggle" aria-label="Open menu"
@@ -41,44 +65,71 @@
   <main>
     <!-- ============================ HERO ============================ -->
     <section class="hero" id="home">
-      <div class="container hero__inner reveal">
-        <p class="hero__eyebrow">Private Wealth Advisory</p>
-        <h1 class="hero__title">Grow and protect<br />what matters.</h1>
-        <p class="hero__subtitle">
-          Thoughtful, independent guidance for professionals and families building
-          lasting wealth — across generations, market cycles, and life's milestones.
-        </p>
-        <div class="hero__actions">
-          <a href="#contact" class="btn btn--gold">Book a Consultation</a>
-          <a href="#about" class="btn btn--outline">Explore Our Services</a>
+      <div class="container hero__inner">
+        <div class="hero__copy reveal">
+          <p class="hero__eyebrow"><span class="pulse" aria-hidden="true"></span> Complimentary Wealth Blueprint</p>
+          <h1 class="hero__title">Know exactly where your <em>wealth</em> stands.</h1>
+          <p class="hero__subtitle">
+            In one short conversation, our advisers build you a personalised Wealth
+            Blueprint — a clear read on your portfolio, retirement, fees and legacy.
+            No cost. No obligation. Yours within one business day.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--glow">Claim your free Blueprint &rarr;</a>
+            <a href="#about" class="btn btn--outline">See what's inside</a>
+          </div>
+          <p class="hero__assure">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            Only a handful of Blueprints each month · Fiduciary, fee-based advice
+          </p>
+
+          <ul class="stats" aria-label="Firm highlights">
+            <li class="stat">
+              <span class="stat__num">£2B+</span>
+              <span class="stat__label">Assets advised</span>
+            </li>
+            <li class="stat">
+              <span class="stat__num">20+</span>
+              <span class="stat__label">Years guiding clients</span>
+            </li>
+            <li class="stat">
+              <span class="stat__num">98%</span>
+              <span class="stat__label">Stay with us</span>
+            </li>
+          </ul>
         </div>
 
-        <ul class="stats" aria-label="Firm highlights">
-          <li class="stat">
-            <span class="stat__num">$2B+</span>
-            <span class="stat__label">Assets advised</span>
-          </li>
-          <li class="stat">
-            <span class="stat__num">20+</span>
-            <span class="stat__label">Years of experience</span>
-          </li>
-          <li class="stat">
-            <span class="stat__num">98%</span>
-            <span class="stat__label">Client retention</span>
-          </li>
-        </ul>
+        <!-- Signature element: a glowing preview of the deliverable -->
+        <aside class="blueprint reveal" aria-label="What your Blueprint includes">
+          <div class="blueprint__head">
+            <span class="blueprint__tag">Your Blueprint</span>
+            <span class="blueprint__price">£0</span>
+          </div>
+          <p class="blueprint__name">The Sterling &amp; Vale Wealth Blueprint</p>
+          <ul class="blueprint__list">
+            <li>Portfolio X-ray — what you own &amp; what it's really costing</li>
+            <li>Retirement projection in today's money</li>
+            <li>Hidden fee &amp; tax-drag audit</li>
+            <li>Estate &amp; legacy gap check</li>
+            <li>One clear next step, in writing</li>
+          </ul>
+          <div class="blueprint__foot">
+            <span class="blueprint__meter" aria-hidden="true"><span></span></span>
+            <span>Delivered within 1 business day</span>
+          </div>
+        </aside>
       </div>
     </section>
 
-    <!-- ============================ SERVICES ============================ -->
+    <!-- ============================ WHAT'S INSIDE ============================ -->
     <section class="services section" id="about">
       <div class="container">
         <header class="section__head reveal">
-          <p class="eyebrow">What we do</p>
-          <h2 class="section__title">A complete view of your financial life</h2>
+          <p class="eyebrow">What's inside</p>
+          <h2 class="section__title">Four answers most people never get</h2>
           <p class="section__lead">
-            We bring discipline and clarity to every decision — so your wealth works
-            quietly and consistently toward the future you have in mind.
+            Your Blueprint isn't a sales pitch — it's a plain-English read on the
+            questions that quietly shape your future. Here's what we map for you.
           </p>
         </header>
 
@@ -90,8 +141,8 @@
                 <path d="M7 15l3.5-4 3 2.5L21 7" />
               </svg>
             </span>
-            <h3 class="card__title">Wealth Planning</h3>
-            <p class="card__text">A clear, holistic roadmap aligning your goals, cash flow, and risk.</p>
+            <h3 class="card__title">Portfolio X-ray</h3>
+            <p class="card__text">See what you actually own, how concentrated you are, and what it's costing you each year.</p>
           </article>
 
           <article class="card reveal">
@@ -101,8 +152,8 @@
                 <path d="M12 7v5l3 2" />
               </svg>
             </span>
-            <h3 class="card__title">Retirement Strategy</h3>
-            <p class="card__text">Income you can rely on, structured to last well beyond your working years.</p>
+            <h3 class="card__title">Retirement, in today's money</h3>
+            <p class="card__text">A clear projection of when you can step back — and what it takes to get there comfortably.</p>
           </article>
 
           <article class="card reveal">
@@ -112,8 +163,8 @@
                 <path d="M7 14l2.5-3 2.5 2 4-5" />
               </svg>
             </span>
-            <h3 class="card__title">Portfolio Management</h3>
-            <p class="card__text">Diversified, evidence-based portfolios managed with steady discipline.</p>
+            <h3 class="card__title">Fee &amp; tax-drag audit</h3>
+            <p class="card__text">We surface the quiet charges and tax inefficiencies eroding your returns — often the easiest money to recover.</p>
           </article>
 
           <article class="card reveal">
@@ -123,9 +174,42 @@
                 <path d="M9.5 12l1.8 1.8L15 10" />
               </svg>
             </span>
-            <h3 class="card__title">Estate Planning</h3>
-            <p class="card__text">Preserve and transfer your legacy thoughtfully, across generations.</p>
+            <h3 class="card__title">Estate &amp; legacy gaps</h3>
+            <p class="card__text">Know what would happen to your wealth tomorrow — and where a small step today protects the people you love.</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ HOW IT WORKS ============================ -->
+    <section class="how section" id="how">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">How it works</p>
+          <h2 class="section__title">Three simple steps</h2>
+          <p class="section__lead">No paperwork marathon. No commitment. Just clarity.</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step__num">01</span>
+            <h3 class="step__title">Share your goals</h3>
+            <p class="step__text">Tell us a little about your situation using the form below — about two minutes.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">02</span>
+            <h3 class="step__title">A 20-minute call</h3>
+            <p class="step__text">A private, no-pressure conversation with an adviser to understand what matters to you.</p>
+          </li>
+          <li class="step reveal">
+            <span class="step__num">03</span>
+            <h3 class="step__title">Receive your Blueprint</h3>
+            <p class="step__text">A written, personalised Blueprint lands in your inbox within one business day.</p>
+          </li>
+        </ol>
+
+        <div class="how__cta reveal">
+          <a href="#contact" class="btn btn--glow">Start step one &rarr;</a>
         </div>
       </div>
     </section>
@@ -135,7 +219,7 @@
       <div class="container">
         <header class="section__head reveal">
           <p class="eyebrow">In their words</p>
-          <h2 class="section__title">Trusted through every season</h2>
+          <h2 class="section__title">What clients say after their Blueprint</h2>
         </header>
 
         <div class="carousel reveal" aria-roledescription="carousel" aria-label="Client testimonials">
@@ -144,7 +228,7 @@
 
               <li class="slide" role="group" aria-roledescription="slide" aria-label="1 of 3">
                 <blockquote class="quote">
-                  <p>"Sterling &amp; Vale gave us a plan we actually understand. For the first
+                  <p>"The Blueprint showed us fees we didn't know we were paying. For the first
                   time, retirement feels calm rather than uncertain."</p>
                   <footer class="quote__by">
                     <span class="avatar" aria-hidden="true">EM</span>
@@ -158,7 +242,7 @@
 
               <li class="slide" role="group" aria-roledescription="slide" aria-label="2 of 3">
                 <blockquote class="quote">
-                  <p>"They listen first and advise second. Our portfolio is diversified,
+                  <p>"They listened first and advised second. The Blueprint was honest,
                   transparent, and built around our family — not a sales target."</p>
                   <footer class="quote__by">
                     <span class="avatar" aria-hidden="true">DP</span>
@@ -172,8 +256,8 @@
 
               <li class="slide" role="group" aria-roledescription="slide" aria-label="3 of 3">
                 <blockquote class="quote">
-                  <p>"Steady, honest guidance through two market downturns. Their discipline
-                  kept us invested when it mattered most."</p>
+                  <p>"One free conversation changed how we see our money. Steady, honest
+                  guidance — and not a hint of pressure to sign anything."</p>
                   <footer class="quote__by">
                     <span class="avatar" aria-hidden="true">JC</span>
                     <span>
@@ -200,21 +284,23 @@
       </div>
     </section>
 
-    <!-- ============================ ENQUIRY FORM ============================ -->
+    <!-- ============================ LEAD CAPTURE FORM ============================ -->
     <section class="contact section" id="contact">
       <div class="container contact__grid">
         <div class="contact__intro reveal">
-          <p class="eyebrow">Get in touch</p>
-          <h2 class="section__title">Book a consultation</h2>
+          <p class="eyebrow">Claim yours</p>
+          <h2 class="section__title">Get your free Wealth Blueprint</h2>
           <p class="section__lead">
             Tell us a little about your goals. We'll arrange a private, no-obligation
-            conversation and respond within one business day.
+            conversation and send your personalised Blueprint within one business day.
           </p>
           <ul class="contact__points">
-            <li>Independent, fee-based advice</li>
+            <li>Completely free — and yours to keep</li>
             <li>Fiduciary standard — your interests first</li>
-            <li>Confidential and personal</li>
+            <li>Confidential &amp; private — never shared, never spammed</li>
+            <li>No obligation to become a client</li>
           </ul>
+          <p class="contact__nudge">Only a limited number of Blueprints each month — claim yours while it's open.</p>
         </div>
 
         <div class="contact__formwrap reveal">
@@ -240,23 +326,24 @@
             </div>
 
             <div class="field">
-              <label for="interest">Investment interest</label>
+              <label for="interest">What's most on your mind?</label>
               <select id="interest" name="interest">
-                <option value="Wealth Planning">Wealth Planning</option>
-                <option value="Retirement">Retirement</option>
-                <option value="Portfolio Management">Portfolio Management</option>
-                <option value="Estate Planning">Estate Planning</option>
-                <option value="Other">Other</option>
+                <option value="Growing my wealth">Growing my wealth</option>
+                <option value="Retirement planning">Retirement planning</option>
+                <option value="Reviewing my current portfolio">Reviewing my current portfolio</option>
+                <option value="Estate &amp; legacy planning">Estate &amp; legacy planning</option>
+                <option value="Not sure yet">Not sure yet</option>
               </select>
             </div>
 
             <div class="field">
-              <label for="message">Message / enquiry <span class="req" aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="4" required aria-required="true"></textarea>
+              <label for="message">Anything you'd like us to know? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" required aria-required="true" placeholder="A sentence or two about your goals is plenty."></textarea>
               <p class="field__error" id="message-error" role="alert"></p>
             </div>
 
-            <button type="submit" class="btn btn--gold btn--block" id="submit-btn">Send Enquiry</button>
+            <button type="submit" class="btn btn--glow btn--block" id="submit-btn">Claim my free Blueprint &rarr;</button>
+            <p class="form__reassure">No cost, no obligation. We reply within one business day, and your details stay private.</p>
             <p class="form__status" id="form-status" role="alert"></p>
           </form>
 
@@ -265,8 +352,8 @@
             <span class="form-success__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </span>
-            <h3>Thank you</h3>
-            <p>Thanks — we'll be in touch within one business day.</p>
+            <h3>You're on the list</h3>
+            <p>Thanks — we've got your details and we'll be in touch within one business day to start your Wealth Blueprint.</p>
           </div>
         </div>
       </div>
@@ -285,10 +372,10 @@
       </div>
 
       <nav class="footer__links" aria-label="Footer">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
+        <a href="#about">What's inside</a>
+        <a href="#how">How it works</a>
+        <a href="#testimonials">Stories</a>
+        <a href="#contact">Claim your Blueprint</a>
       </nav>
     </div>
 

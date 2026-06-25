@@ -163,7 +163,7 @@
         phone: form.phone.value.trim(),
         interest: form.interest.value,
         message: form.message.value.trim(),
-        _subject: "New enquiry from Sterling & Vale website",
+        _subject: "New Wealth Blueprint request — Sterling & Vale website",
         _template: "table",
         _captcha: "false"
       };
@@ -193,7 +193,7 @@
           statusEl.textContent = "Something went wrong. Please try again, or email us directly.";
           statusEl.classList.add("error");
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send Enquiry";
+          submitBtn.innerHTML = "Claim my free Blueprint &rarr;";
         });
     });
   }

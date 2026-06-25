@@ -1,25 +1,29 @@
 # Sterling & Vale Advisory
 
-A single-page marketing website for **Sterling & Vale Advisory**, a fictional wealth-management firm. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no package manager. Google Fonts is the only external dependency.
+A single-page **lead-magnet landing page** for **Sterling & Vale Advisory**, a fictional wealth-management firm. The page is built around one conversion goal: get visitors to claim a free **Wealth Blueprint** via the enquiry form. Built with vanilla HTML, CSS, and JavaScript — no frameworks, no build tools, no package manager. Google Fonts is the only external dependency.
 
 🌐 **Live site:** https://wendyhow005.github.io/wealth/
 
-![Sterling & Vale Advisory — homepage](screenshot.png)
+![Sterling & Vale Advisory — Free Wealth Blueprint landing page](screenshot.png)
 
 ## Features
 
+- **Purple visual identity** — deep aubergine with an amethyst→orchid glow accent; **Fraunces** display serif paired with **Inter** body
+- **Lead-magnet funnel** — offer hero → what's inside → how it works (3-step) → testimonials → capture form
+- **Signature hero element** — a glowing glass "Blueprint" card that previews the free offer
 - **Responsive, mobile-first design** with breakpoints at 640px, 860px, and 980px
 - **Smooth-scroll navigation** with a collapsible mobile menu
 - **Scroll-in reveal animations** powered by `IntersectionObserver`
 - **Auto-playing testimonial carousel** with dot navigation
 - **Enquiry form** that submits via AJAX (FormSubmit) without a page redirect
+- **SEO-ready** — descriptive title/meta, canonical, Open Graph tags, and `FinancialService`/`Offer` JSON-LD structured data
 - **Accessibility-conscious**: respects `prefers-reduced-motion`, semantic markup, ARIA on nav and carousel, visible focus styles
 
 ## Project structure
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Semantic page structure — Hero → Services → Testimonials → Contact |
+| `index.html` | Semantic page structure — Hero → What's inside → How it works → Testimonials → Lead form, plus SEO/social `<head>` |
 | `styles.css` | All styling; theming driven by `:root` custom properties, mobile-first layout |
 | `script.js` | One IIFE: navbar state, mobile menu, scroll reveals, carousel, enquiry form, footer year |
 
