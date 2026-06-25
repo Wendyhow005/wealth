@@ -104,6 +104,59 @@
   }
 
   /* ---------- 4. Enquiry form + FormSubmit AJAX ---------- */
+
+  // Post-submit celebration: spoken thank-you + floating balloons.
+  // Triggered from the success handler below (a hook on a successful submit).
+  var THANKS_TEXT = "Hurray! Thank you for your submission. We will get back to you in one business day.";
+
+  function speakThanks() {
+    try {
+      if (!("speechSynthesis" in window)) return;
+      var u = new SpeechSynthesisUtterance(THANKS_TEXT);
+      u.lang = "en-GB";
+      u.rate = 1;
+      u.pitch = 1.05;
+      u.volume = 1;
+      window.speechSynthesis.cancel();   // clear anything queued
+      window.speechSynthesis.speak(u);   // user gesture (submit) permits audio
+    } catch (e) { /* speech unsupported — fail quietly */ }
+  }
+
+  function launchBalloons() {
+    if (reduceMotion) return;            // honour prefers-reduced-motion
+    var colors = ["#7c3aed", "#a78bfa", "#e879f9", "#c4b5fd", "#6d28d9"];
+    var layer = document.createElement("div");
+    layer.className = "balloons";
+    layer.setAttribute("aria-hidden", "true");
+    document.body.appendChild(layer);
+
+    var count = 16;
+    var maxDur = 0;
+    for (var i = 0; i < count; i++) {
+      var b = document.createElement("span");
+      b.className = "balloon";
+      var dur = 4 + Math.random() * 2.5;       // 4–6.5s
+      var delay = Math.random() * 0.8;
+      if (dur + delay > maxDur) maxDur = dur + delay;
+      b.style.left = (Math.random() * 92 + 2) + "vw";
+      b.style.setProperty("--c", colors[i % colors.length]);
+      b.style.setProperty("--dur", dur.toFixed(2) + "s");
+      b.style.setProperty("--delay", delay.toFixed(2) + "s");
+      b.style.setProperty("--drift", (Math.random() * 80 - 40).toFixed(0) + "px");
+      b.style.setProperty("--rot", (Math.random() * 24 - 12).toFixed(0) + "deg");
+      layer.appendChild(b);
+    }
+    // Clean up the layer once the longest balloon has floated off-screen.
+    window.setTimeout(function () {
+      if (layer.parentNode) layer.parentNode.removeChild(layer);
+    }, Math.ceil((maxDur + 0.5) * 1000));
+  }
+
+  function celebrate() {
+    speakThanks();
+    launchBalloons();
+  }
+
   // REPLACE_WITH_YOUR_EMAIL — change the address below to receive enquiries.
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/wendy.how@redbeaconam.com";
   var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -184,10 +237,11 @@
           return res.json();
         })
         .then(function () {
-          // Success: hide the form, show the friendly message
+          // Success: hide the form, show the friendly message, then celebrate
           form.hidden = true;
           if (successEl) successEl.hidden = false;
           form.reset();
+          celebrate();
         })
         .catch(function () {
           statusEl.textContent = "Something went wrong. Please try again, or email us directly.";
