@@ -16,7 +16,10 @@ A single-page **lead-magnet landing page** for **Sterling & Vale Advisory**, a f
 - **Scroll-in reveal animations** powered by `IntersectionObserver`
 - **Auto-playing testimonial carousel** with dot navigation
 - **Enquiry form** that submits via AJAX (FormSubmit) without a page redirect
-- **SEO-ready** — descriptive title/meta, canonical, Open Graph tags, and `FinancialService`/`Offer` JSON-LD structured data
+- **WhatsApp chat widget** — floating button with suggested-question chips and free-text compose
+- **Social profile links** in the footer (LinkedIn, X, Facebook, Instagram, YouTube) as inline-SVG icons
+- **Social share buttons** on the form-success state (LinkedIn, X, Facebook, email, and copy-link)
+- **SEO-ready** — descriptive title/meta, canonical, full Open Graph + Twitter Card tags, `FinancialService`/`Offer` JSON-LD with `sameAs`, plus `robots.txt`, `sitemap.xml`, and an SVG favicon
 - **Accessibility-conscious**: respects `prefers-reduced-motion`, semantic markup, ARIA on nav and carousel, visible focus styles
 
 ## Project structure
@@ -25,7 +28,8 @@ A single-page **lead-magnet landing page** for **Sterling & Vale Advisory**, a f
 | --- | --- |
 | `index.html` | Semantic page structure — Hero → What's inside → How it works → Testimonials → Lead form, plus SEO/social `<head>` |
 | `styles.css` | All styling; theming driven by `:root` custom properties, mobile-first layout |
-| `script.js` | One IIFE: navbar state, mobile menu, scroll reveals, carousel, enquiry form, footer year |
+| `script.js` | One IIFE: navbar state, mobile menu, scroll reveals, carousel, enquiry form, footer year, WhatsApp widget, copy-link share |
+| `robots.txt` / `sitemap.xml` / `favicon.svg` | Crawler directives, single-URL sitemap, and brand SVG favicon |
 
 ## Running locally
 

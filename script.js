@@ -273,4 +273,22 @@
       if (!waPanel.hidden && !waWrap.contains(e.target)) closePanel(false);
     });
   }
+
+  /* ---------- 7. Share bar: copy-link button ---------- */
+  var copyBtn = document.getElementById("copy-link-btn");
+  var copyLabel = document.getElementById("copy-link-label");
+  if (copyBtn && copyLabel && navigator.clipboard) {
+    copyBtn.addEventListener("click", function () {
+      navigator.clipboard.writeText(window.location.href).then(function () {
+        copyLabel.textContent = "Copied!";
+        copyBtn.setAttribute("aria-label", "Link copied to clipboard");
+        window.setTimeout(function () {
+          copyLabel.textContent = "Copy link";
+          copyBtn.setAttribute("aria-label", "Copy page link");
+        }, 2000);
+      }).catch(function () {
+        /* Clipboard permission denied — silent fail */
+      });
+    });
+  }
 })();

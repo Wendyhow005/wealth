@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wendyhow005.github.io/wealth/sitemap.xml

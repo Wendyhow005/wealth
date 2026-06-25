@@ -439,6 +439,34 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .footer__bottom { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; justify-content: space-between; padding-top: var(--sp-3); font-size: 0.82rem; color: rgba(255,255,255,0.55); }
 .footer__disclaimer { max-width: 560px; }
 
+/* Footer social icons */
+.footer__social { display: flex; gap: var(--sp-2); align-items: center; flex-wrap: wrap; }
+.footer__social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: var(--radius-sm);
+  color: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.12);
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.footer__social a:hover { color: var(--glow); border-color: var(--amethyst); background: rgba(167,139,250,0.1); }
+.footer__social a:focus-visible { outline: 3px solid var(--amethyst); outline-offset: 3px; }
+.footer__social svg { width: 18px; height: 18px; }
+
+/* Share bar (form success state) */
+.share-bar { margin-top: var(--sp-4); text-align: center; }
+.share-bar__label { font-size: 0.88rem; color: var(--muted); margin-bottom: var(--sp-2); }
+.share-bar__btns { display: flex; flex-wrap: wrap; gap: var(--sp-1); justify-content: center; }
+.share-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; border-radius: 999px;
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+  color: var(--plum); background: var(--bg); border: 1.5px solid var(--border);
+  cursor: pointer; text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+}
+.share-btn:hover { background: rgba(124,58,237,0.08); border-color: var(--amethyst); color: var(--violet); transform: translateY(-1px); }
+.share-btn:focus-visible { outline: 3px solid var(--amethyst); outline-offset: 3px; }
+.share-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
 /* ============================================================
    SCROLL-IN ANIMATIONS
    ============================================================ */
