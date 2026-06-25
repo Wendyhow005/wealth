@@ -4,6 +4,8 @@ A single-page marketing website for **Sterling & Vale Advisory**, a fictional we
 
 🌐 **Live site:** https://wendyhow005.github.io/wealth/
 
+![Sterling & Vale Advisory — homepage](screenshot.png)
+
 ## Features
 
 - **Responsive, mobile-first design** with breakpoints at 640px, 860px, and 980px
