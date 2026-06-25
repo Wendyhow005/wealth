@@ -1,0 +1,13 @@
+# Local Claude Code config (machine-specific permissions, not for publishing)
+.claude/settings.local.json
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+
+# OS cruft
+.DS_Store
+Thumbs.db
