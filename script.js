@@ -201,4 +201,76 @@
   /* ---------- 5. Footer year ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  /* ---------- 6. WhatsApp chat widget ---------- */
+  // Destination WhatsApp number in international format, digits only (no +).
+  // 65 = Singapore country code, 9698 3731 = the number.
+  var WA_NUMBER = "6596983731";
+
+  var waWrap = document.getElementById("wa");
+  var waFab = document.getElementById("wa-fab");
+  var waPanel = document.getElementById("wa-panel");
+  var waClose = document.getElementById("wa-close");
+  var waBadge = document.getElementById("wa-badge");
+  var waChips = document.getElementById("wa-chips");
+  var waForm = document.getElementById("wa-form");
+  var waInput = document.getElementById("wa-input");
+
+  if (waWrap && waFab && waPanel) {
+    function waLink(message) {
+      return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
+    }
+
+    // Open WhatsApp in a new tab/app with the given message.
+    function waSend(message) {
+      window.open(waLink(message), "_blank", "noopener");
+    }
+
+    function openPanel() {
+      waPanel.hidden = false;
+      waWrap.classList.add("is-open");
+      waFab.setAttribute("aria-expanded", "true");
+      if (waBadge) waBadge.hidden = true;
+      // Move focus into the panel for keyboard users.
+      if (waClose) waClose.focus();
+    }
+    function closePanel(returnFocus) {
+      waPanel.hidden = true;
+      waWrap.classList.remove("is-open");
+      waFab.setAttribute("aria-expanded", "false");
+      if (returnFocus !== false) waFab.focus();
+    }
+
+    waFab.addEventListener("click", function () {
+      if (waPanel.hidden) openPanel(); else closePanel();
+    });
+    if (waClose) waClose.addEventListener("click", function () { closePanel(); });
+
+    // Suggested-query chips → open WhatsApp with the prefilled text.
+    if (waChips) {
+      waChips.addEventListener("click", function (e) {
+        var chip = e.target.closest(".wa__chip");
+        if (!chip) return;
+        waSend(chip.getAttribute("data-msg") || "Hello!");
+      });
+    }
+
+    // Free-text compose → open WhatsApp with whatever the visitor typed.
+    if (waForm) {
+      waForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var msg = (waInput && waInput.value.trim()) || "Hi! I'd like to know more about the free Wealth Blueprint.";
+        waSend(msg);
+        if (waInput) waInput.value = "";
+      });
+    }
+
+    // Esc closes the panel; click outside closes it too.
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !waPanel.hidden) closePanel();
+    });
+    document.addEventListener("click", function (e) {
+      if (!waPanel.hidden && !waWrap.contains(e.target)) closePanel(false);
+    });
+  }
 })();

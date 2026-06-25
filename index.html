@@ -387,6 +387,50 @@
     </div>
   </footer>
 
+  <!-- ============================ WHATSAPP CHAT WIDGET ============================ -->
+  <div class="wa" id="wa">
+    <!-- Chat panel -->
+    <div class="wa__panel" id="wa-panel" role="dialog" aria-label="Chat with Sterling and Vale on WhatsApp" hidden>
+      <div class="wa__header">
+        <span class="wa__avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M.5 23.5l1.6-5.9A11.4 11.4 0 1 1 12 23.4h0a11.4 11.4 0 0 1-5.4-1.4L.5 23.5ZM6.9 19.9l.4.2a9.5 9.5 0 0 0 4.8 1.3h0a9.5 9.5 0 1 0-8-4.4l.3.4-1 3.5 3.5-.9Zm11.4-5.2c-.1-.2-.5-.4-1-.6s-1.4-.7-1.6-.8-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a7.7 7.7 0 0 1-2.3-1.4 8.6 8.6 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.5-.5a2 2 0 0 0 .3-.5.5.5 0 0 0 0-.5c0-.2-.6-1.5-.9-2s-.4-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.2 2.9 12.2 12.2 0 0 0 4.6 4.1c2.6 1 2.6.7 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3Z"/></svg>
+        </span>
+        <div class="wa__id">
+          <span class="wa__name">Sterling &amp; Vale</span>
+          <span class="wa__status"><span class="wa__pulse" aria-hidden="true"></span> Typically replies within an hour</span>
+        </div>
+        <button class="wa__close" id="wa-close" type="button" aria-label="Close chat">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+
+      <div class="wa__body">
+        <p class="wa__bubble">👋 Hi there! How can we help with your wealth goals? Tap a question below — or type your own.</p>
+        <p class="wa__prompt">Suggested questions</p>
+        <div class="wa__chips" id="wa-chips">
+          <button class="wa__chip" type="button" data-msg="Hi! I'd like to claim my free Wealth Blueprint.">📘 Claim my free Wealth Blueprint</button>
+          <button class="wa__chip" type="button" data-msg="How does the Wealth Blueprint work?">How does it work?</button>
+          <button class="wa__chip" type="button" data-msg="Is the Blueprint really free, with no obligation?">Is it really free?</button>
+          <button class="wa__chip" type="button" data-msg="Can I book a quick call with an adviser?">Book a quick call</button>
+        </div>
+      </div>
+
+      <form class="wa__compose" id="wa-form">
+        <input type="text" id="wa-input" class="wa__input" placeholder="Type your message…" aria-label="Type your message" autocomplete="off" />
+        <button type="submit" class="wa__send" aria-label="Send on WhatsApp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+      </form>
+      <p class="wa__foot">Opens a chat in WhatsApp</p>
+    </div>
+
+    <!-- Floating button -->
+    <button class="wa__fab" id="wa-fab" type="button" aria-label="Chat with us on WhatsApp" aria-expanded="false" aria-controls="wa-panel">
+      <svg class="wa__fab-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.5 23.5l1.6-5.9A11.4 11.4 0 1 1 12 23.4h0a11.4 11.4 0 0 1-5.4-1.4L.5 23.5ZM6.9 19.9l.4.2a9.5 9.5 0 0 0 4.8 1.3h0a9.5 9.5 0 1 0-8-4.4l.3.4-1 3.5 3.5-.9Zm11.4-5.2c-.1-.2-.5-.4-1-.6s-1.4-.7-1.6-.8-.4-.1-.6.1-.6.8-.8 1-.3.2-.6.1a7.7 7.7 0 0 1-2.3-1.4 8.6 8.6 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.5-.5a2 2 0 0 0 .3-.5.5.5 0 0 0 0-.5c0-.2-.6-1.5-.9-2s-.4-.5-.6-.5h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.2 5.3 5.3 0 0 0 1.2 2.9 12.2 12.2 0 0 0 4.6 4.1c2.6 1 2.6.7 3.1.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3Z"/></svg>
+      <span class="wa__badge" id="wa-badge" aria-hidden="true">1</span>
+    </button>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
